@@ -2,7 +2,7 @@
 <html>
 <head>
 
-<title>Rakkesh | Stock Portfolio</title>
+<title>Rakkesh | Spectacular Portfolio</title>
 
 <style>
 
@@ -14,118 +14,192 @@ font-family:Arial;
 }
 
 body{
-background:#0a0a0a;
+
+background:linear-gradient(135deg,#0a0f2c,#c10000);
 color:white;
 overflow-x:hidden;
+
 }
 
-/* HERO SECTION */
+/* SPIDER WEB BACKGROUND */
+
+body::before{
+
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:url("https://www.transparenttextures.com/patterns/spider-web.png");
+opacity:0.15;
+z-index:-1;
+
+}
+
+/* HERO */
 
 .hero{
+
 height:100vh;
-background:url("https://wallpapercave.com/wp/wp7122806.jpg");
-background-size:cover;
-background-position:center;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+
+background-image:
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7)),
+url("https://wallpaperaccess.com/full/3937350.jpg");
+
+background-size:cover;
+background-position:center;
+
 }
 
 .hero h1{
+
 font-size:70px;
-color:#ff1a1a;
+color:#ff3030;
 text-shadow:0 0 20px red;
+
+}
+
+.hero span{
+
+color:#3aa0ff;
+
 }
 
 .hero p{
-font-size:22px;
+
 margin-top:10px;
-color:#ddd;
+font-size:22px;
+color:#ccc;
+
 }
 
 /* WEB LINE */
 
 .web{
-width:2px;
-height:120px;
+
+width:3px;
+height:150px;
 background:white;
 margin-top:20px;
 animation:swing 2s infinite alternate;
+
 }
 
 @keyframes swing{
-from{transform:rotate(-5deg)}
-to{transform:rotate(5deg)}
+
+from{transform:rotate(-6deg)}
+to{transform:rotate(6deg)}
+
 }
 
 /* SECTION */
 
 .section{
+
 padding:80px 10%;
 text-align:center;
+
 }
 
 .section h2{
-font-size:40px;
+
+font-size:42px;
+color:#3aa0ff;
 margin-bottom:40px;
-color:#ff2b2b;
+
 }
 
 /* STOCK CARDS */
 
 .cards{
+
 display:flex;
-justify-content:center;
 flex-wrap:wrap;
+justify-content:center;
 gap:30px;
+
 }
 
 .card{
+
 background:#111;
 padding:30px;
-border-radius:15px;
 width:250px;
-transition:0.3s;
-border:2px solid #1a1a1a;
+border-radius:15px;
+border:2px solid #222;
+transition:.3s;
+
 }
 
 .card:hover{
+
 transform:translateY(-10px);
-box-shadow:0 0 20px red;
-border-color:red;
+box-shadow:0 0 20px red,0 0 20px blue;
+
 }
 
 .card h3{
-margin-bottom:10px;
+
+color:#ff4040;
+
+}
+
+/* SPIDER IMAGE SECTION */
+
+.spider{
+
+text-align:center;
+padding:60px;
+
+}
+
+.spider img{
+
+width:300px;
+transition:.4s;
+
+}
+
+.spider img:hover{
+
+transform:scale(1.1) rotate(5deg);
+
 }
 
 /* BUTTON */
 
 button{
-background:red;
+
+background:#ff2020;
 border:none;
-padding:12px 25px;
-border-radius:8px;
+padding:14px 30px;
+border-radius:10px;
 color:white;
-cursor:pointer;
 font-size:16px;
+cursor:pointer;
 margin-top:20px;
+
 }
 
 button:hover{
-background:#ff3c3c;
+
+background:#3aa0ff;
+
 }
 
 /* FOOTER */
 
 footer{
-background:black;
+
+background:#000;
 text-align:center;
 padding:30px;
-margin-top:40px;
 color:#aaa;
+
 }
 
 </style>
@@ -136,8 +210,9 @@ color:#aaa;
 
 <div class="hero">
 
-<h1>Rakkesh</h1>
-<p>Age 23 | Stock Market Portfolio</p>
+<h1>Rakkesh <span>Portfolio</span></h1>
+
+<p>Age 23 | Stock Market Explorer</p>
 
 <div class="web"></div>
 
@@ -151,58 +226,64 @@ color:#aaa;
 
 <div class="card">
 <h3>Reliance</h3>
-<p>Sector: Energy</p>
-<p>Strategy: Long Term</p>
+<p>Energy Sector</p>
+<p>Long Term</p>
 </div>
 
 <div class="card">
 <h3>TCS</h3>
-<p>Sector: IT</p>
-<p>Strategy: Growth</p>
+<p>IT Sector</p>
+<p>Growth</p>
 </div>
 
 <div class="card">
 <h3>HDFC Bank</h3>
-<p>Sector: Banking</p>
-<p>Strategy: Swing</p>
+<p>Banking</p>
+<p>Swing Trade</p>
 </div>
 
 <div class="card">
 <h3>Infosys</h3>
-<p>Sector: IT</p>
-<p>Strategy: Long Term</p>
+<p>IT Sector</p>
+<p>Long Term</p>
 </div>
 
 </div>
 
-<button onclick="spiderAlert()">Activate Spider Sense</button>
+<button onclick="spiderSense()">Activate Spider Sense</button>
 
-<p id="alertText" style="margin-top:20px"></p>
+<p id="sense" style="margin-top:15px;"></p>
 
 </section>
 
+<div class="spider">
+
+<img src="https://wallpaperaccess.com/full/3937350.jpg">
+
+</div>
+
 <footer>
 
-<p>🕷 Built by Rakkesh | Stock Market Explorer</p>
+🕷 Spectacular Portfolio by Rakkesh
 
 </footer>
 
 <script>
 
-function spiderAlert(){
+function spiderSense(){
 
-let messages = [
+let msg=[
 
-"📈 Spider Sense: Bullish market detected!",
-"⚠ Spider Sense: Volatility incoming!",
-"🕷 Spider Sense: Perfect buying opportunity!",
-"💰 Spider Sense: Hold your positions!"
+"📈 Spider Sense: Bullish market incoming!",
+"⚠ Spider Sense: Volatility detected!",
+"💰 Spider Sense: Buying opportunity!",
+"🕸 Spider Sense: Hold your positions!"
 
 ];
 
-let random = Math.floor(Math.random()*messages.length);
+let r=Math.floor(Math.random()*msg.length);
 
-document.getElementById("alertText").innerText = messages[random];
+document.getElementById("sense").innerText=msg[r];
 
 }
 
